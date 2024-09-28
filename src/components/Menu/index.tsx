@@ -9,9 +9,18 @@ import { menuItemClick, actionItemClick } from '@/slice/menuSlice'
 
 import { MENU_ITEMS } from '@/constants';
 
+
+
+type RootState = {
+    menu: {
+        activeMenuItem: string;
+        actionMenuItem: string | null;
+    }
+};
+
 const Menu = () => {
     const dispatch = useDispatch()
-    const activeMenuItem = useSelector((state) => state.menu.activeMenuItem)
+    const activeMenuItem = useSelector((state: RootState) => state.menu.activeMenuItem)
     const handleMenuClick = (itemName: string) => {
         dispatch(menuItemClick(itemName))
     }

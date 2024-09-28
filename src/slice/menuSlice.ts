@@ -1,7 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { MENU_ITEMS } from "@/constants";
 
-const initialState = {
+export type initialStateType = {
+  activeMenuItem: string;
+  actionMenuItem: string | null;
+};
+
+const initialState: initialStateType = {
   activeMenuItem: MENU_ITEMS.PENCIL,
   actionMenuItem: null,
 };
